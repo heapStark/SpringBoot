@@ -22,4 +22,5 @@ public class Hello {
     public Date time(@RequestParam String name){
         return new Date();
     }
+
 }
