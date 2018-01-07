@@ -1,5 +1,7 @@
 package heapstark.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,10 +12,12 @@ import java.util.Date;
  * springBoot
  * Created by wangzhilei3 on 2018/1/6.
  */
+@Api
 @RestController
 @RequestMapping("/dynamic")
 public class DynamicUrlController {
     //localhost:8080/dynamic/id/123:hello
+    @ApiOperation("123")
     @RequestMapping("/id/{id}")
     public String id(
             @PathVariable("id") String id ) {
