@@ -14,12 +14,13 @@ import java.util.Date;
 @RestController
 public class Hello {
     @RequestMapping("/hello/{hello}")
-    public String hello (HttpServletRequest request){
+    public String hello(HttpServletRequest request) {
 
         return "hello";
     }
-    @RequestMapping(value = "/time",method = RequestMethod.GET)
-    public Date time(@RequestParam String name){
+
+    @RequestMapping(value = "/time", method = RequestMethod.GET)
+    public Date time(@RequestParam String name) {
         return new Date();
     }
 

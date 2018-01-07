@@ -27,10 +27,11 @@ public class Swagger2 {
                 .paths(PathSelectors.any())
                 .build();
     }
+
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("springboot利用swagger构建api文档")
-                .description("简单优雅的restfun风格")
+                .title("springBoot利用swagger构建api文档")
+                .description("简单优雅的Restful风格")
                 .termsOfServiceUrl("local")
                 .version("1.0")
                 .build();
