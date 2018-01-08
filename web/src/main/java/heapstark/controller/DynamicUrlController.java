@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Api
 @RestController
-@RequestMapping("/dynamic")
+@RequestMapping(value = "/dynamic", method = RequestMethod.GET)
 public class DynamicUrlController {
     //localhost:8080/dynamic/id/123:hello
     @ApiOperation("123")
