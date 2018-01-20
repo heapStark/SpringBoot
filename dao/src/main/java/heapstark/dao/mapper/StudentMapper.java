@@ -2,6 +2,7 @@ package heapstark.dao.mapper;
 
 import heapstark.domain.dao.Student;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * Created by wangzhilei3 on 2018/1/20.
  */
 @Mapper
+@Repository
 public interface StudentMapper {
     @Insert("insert into student(name, id) values(#{name}, #{id})")
     int add(@Param("name") String name, @Param("id") int id);
