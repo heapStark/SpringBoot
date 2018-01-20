@@ -1,6 +1,8 @@
 package heapstark.config;
 
+import heapstark.dao.plugin.MapIntercept;
 import heapstark.service.propertyConfig.PropertyService;
+import org.apache.ibatis.plugin.Interceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,5 +27,9 @@ public class PropertyConfig {
             hashMap.put(map.get("propkey"), map.get("propvalue"));
         });
         return hashMap;
+    }
+    @Bean
+    public Interceptor getInterceptor(){
+        return new MapIntercept();
     }
 }

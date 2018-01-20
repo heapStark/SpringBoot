@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * springBoot
@@ -18,6 +19,9 @@ public interface PropertyConfigMapper {
     @Select("select propkey, propvalue  from config")
     @MapKey("propkey")
     List<HashMap<String, String>> findProperty();
+
+    @Select("select propkey, propvalue  from config")
+    List<HashMap<String, String>>findPropertyMap(Map map);
 
 }
 
