@@ -24,6 +24,9 @@ public class MapIntercept implements Interceptor {
     public Object intercept(Invocation invocation) throws Throwable {
         Object target = invocation.getTarget();
         if (target instanceof DefaultResultSetHandler) {
+            if (reflect((DefaultResultSetHandler) target).getParameterObject()instanceof Map){
+
+            }
             Statement stmt = (Statement) invocation.getArgs()[0];
             // 根据maoParam返回处理结果
             return handleResultSet(stmt.getResultSet());
@@ -38,17 +41,6 @@ public class MapIntercept implements Interceptor {
 
     public void setProperties(Properties properties) {
 
-    }
-
-    private ParameterHandler reflect(DefaultResultSetHandler resultSetHandler) {
-        Field field = ReflectionUtils.findField(DefaultResultSetHandler.class, "parameterHandler");
-        field.setAccessible(true);
-        Object value = null;
-        try {
-            value = field.get(resultSetHandler);
-        } catch (Exception e) {
-        }
-        return (ParameterHandler) value;
     }
 
     private Object handleResultSet(ResultSet resultSet) {
@@ -80,6 +72,18 @@ public class MapIntercept implements Interceptor {
         } catch (SQLException e) {
         }
     }
+
+    private ParameterHandler reflect(DefaultResultSetHandler resultSetHandler){
+        Field field = ReflectionUtils.findField(DefaultResultSetHandler.class, "parameterHandler");
+        field.setAccessible(true);
+        Object value = null;
+        try {
+            value = field.get(resultSetHandler);
+        } catch (Exception e) {
+        }
+        return (ParameterHandler)value;
+    }
+
 
 
 }
