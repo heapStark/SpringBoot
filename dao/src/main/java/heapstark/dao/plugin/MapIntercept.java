@@ -4,6 +4,7 @@ import org.apache.ibatis.executor.parameter.ParameterHandler;
 import org.apache.ibatis.executor.resultset.DefaultResultSetHandler;
 import org.apache.ibatis.executor.resultset.ResultSetHandler;
 import org.apache.ibatis.plugin.*;
+import org.apache.ibatis.session.ResultHandler;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;
@@ -23,13 +24,15 @@ import java.util.Properties;
 public class MapIntercept implements Interceptor {
     public Object intercept(Invocation invocation) throws Throwable {
         Object target = invocation.getTarget();
-        if (target instanceof DefaultResultSetHandler) {
-            if (reflect((DefaultResultSetHandler) target).getParameterObject()instanceof Map){
 
+        if (target instanceof DefaultResultSetHandler) {
+            if (reflect((DefaultResultSetHandler) target).getParameterObject() instanceof Map) {
+                Statement stmt = (Statement) invocation.getArgs()[0];
+                // 根据maoParam返回处理结果
+                return handleResultSet(stmt.getResultSet());
             }
-            Statement stmt = (Statement) invocation.getArgs()[0];
-            // 根据maoParam返回处理结果
-            return handleResultSet(stmt.getResultSet());
+
+
         }
         return invocation.proceed();
 
@@ -73,7 +76,7 @@ public class MapIntercept implements Interceptor {
         }
     }
 
-    private ParameterHandler reflect(DefaultResultSetHandler resultSetHandler){
+    private ParameterHandler reflect(DefaultResultSetHandler resultSetHandler) {
         Field field = ReflectionUtils.findField(DefaultResultSetHandler.class, "parameterHandler");
         field.setAccessible(true);
         Object value = null;
@@ -81,9 +84,21 @@ public class MapIntercept implements Interceptor {
             value = field.get(resultSetHandler);
         } catch (Exception e) {
         }
-        return (ParameterHandler)value;
+
+        return (ParameterHandler) value;
     }
 
+    private ResultHandler reflectReturn(DefaultResultSetHandler resultSetHandler) {
+        Field field = ReflectionUtils.findField(DefaultResultSetHandler.class, "resultHandler");
+        field.setAccessible(true);
+        Object value = null;
+        try {
+            value = field.get(resultSetHandler);
+        } catch (Exception e) {
+        }
+
+        return (ResultHandler) value;
+    }
 
 
 }

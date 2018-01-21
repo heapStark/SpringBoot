@@ -21,7 +21,7 @@ public interface PropertyConfigMapper {
     List<HashMap<String, String>> findProperty();
 
     @Select("select propkey, propvalue  from config")
-    List<HashMap<String, String>>findPropertyMap(Map map);
+    HashMap<String, String>findPropertyMap(Map map);
 
 }
 

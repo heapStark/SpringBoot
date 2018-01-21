@@ -23,13 +23,14 @@ public class ConfigController {
 
     public HashMap<String, String> config() {
 
-        return null;
+        return propertyConfigs;
     }
+
     @RequestMapping("/config2")
 
-    public List<HashMap<String, String>> config2() {
+    public HashMap<String, String> config2() {
 
-        List  hashMap =  propertyConfigMapper.findPropertyMap(new HashMap());
+        HashMap hashMap = propertyConfigMapper.findPropertyMap(new HashMap());
         return hashMap;
     }
 }
