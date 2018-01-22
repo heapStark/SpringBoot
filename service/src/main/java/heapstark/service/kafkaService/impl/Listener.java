@@ -16,7 +16,11 @@ public class Listener {
 
     @KafkaListener(topics = {"renewal_resourcename_bind_modify_topic"})
     public void listen(ConsumerRecord<?, ?> record) {
+        logger.info("this:{}", Thread.currentThread().getName());
         logger.info("kafka的key: " + record.key());
         logger.info("kafka的value: " + record.value().toString());
+
     }
+
+
 }
