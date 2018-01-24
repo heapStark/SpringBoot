@@ -2,6 +2,7 @@ package heapstark.config;
 
 import heapstark.dao.plugin.LimitIntercept;
 import heapstark.dao.plugin.MapIntercept;
+import heapstark.dao.plugin.PageIntercept;
 import heapstark.service.propertyConfig.PropertyService;
 import org.apache.ibatis.plugin.Interceptor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,6 @@ public class PropertyConfig {
             hashMap.put(map.get("propkey"), map.get("propvalue"));
         });
         return hashMap;
-        //return  new HashMap<>();
     }
 
     @Bean
@@ -39,5 +39,11 @@ public class PropertyConfig {
     @Bean
     public Interceptor getLimitIntercept() {
         return new LimitIntercept();
+    }
+
+    @Bean
+    public Interceptor getPageIntercept() {
+        return new PageIntercept();
+
     }
 }

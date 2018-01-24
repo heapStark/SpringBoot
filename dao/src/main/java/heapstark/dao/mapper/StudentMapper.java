@@ -1,6 +1,7 @@
 package heapstark.dao.mapper;
 
 import heapstark.domain.dao.Student;
+import heapstark.domain.vo.PageParams;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
@@ -27,4 +28,7 @@ public interface StudentMapper {
 
     @Select("select * from student")
     List<Student> findAllStudent();
+
+    @Select("select * from student")
+    List<Student> findAllStudentByPage(PageParams pageParams);
 }
