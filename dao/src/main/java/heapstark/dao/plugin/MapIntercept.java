@@ -38,8 +38,15 @@ public class MapIntercept implements Interceptor {
 
     }
 
-    public Object plugin(Object o) {
-        return Plugin.wrap(o, this);
+    public Object plugin(Object target) {
+        /*创建 Executor（）时调用入如下方法
+        public Object pluginAll(Object target) {
+            for (Interceptor interceptor : interceptors) {
+                target = interceptor.plugin(target);
+            }
+            return target;
+        }*/
+        return Plugin.wrap(target, this);
     }
 
     public void setProperties(Properties properties) {

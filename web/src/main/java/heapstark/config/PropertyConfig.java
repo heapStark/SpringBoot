@@ -1,5 +1,6 @@
 package heapstark.config;
 
+import heapstark.dao.plugin.LimitIntercept;
 import heapstark.dao.plugin.MapIntercept;
 import heapstark.service.propertyConfig.PropertyService;
 import org.apache.ibatis.plugin.Interceptor;
@@ -27,9 +28,16 @@ public class PropertyConfig {
             hashMap.put(map.get("propkey"), map.get("propvalue"));
         });
         return hashMap;
+        //return  new HashMap<>();
     }
+
     @Bean
-    public Interceptor getInterceptor(){
+    public Interceptor getMapIntercept() {
         return new MapIntercept();
+    }
+
+    @Bean
+    public Interceptor getLimitIntercept() {
+        return new LimitIntercept();
     }
 }
