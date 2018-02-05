@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2de5a5b4-5209-42dc-964f-2b70d9733deb" name="Default" comment="增加mybatis回填总页数插件">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_0_BUILD_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_0_BUILD_SNAPSHOT.xml" />
+    <list default="true" id="2de5a5b4-5209-42dc-964f-2b70d9733deb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1310,7 +1309,7 @@
       <workItem from="1516775255590" duration="13541000" />
       <workItem from="1516850892335" duration="2449000" />
       <workItem from="1516874304045" duration="11161000" />
-      <workItem from="1517711232452" duration="1949000" />
+      <workItem from="1517711232452" duration="2196000" />
     </task>
     <task id="LOCAL-00001" summary="ini">
       <created>1515079892049</created>
@@ -1424,7 +1423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516792702257</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="nothing">
+      <created>1517833592923</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1517833592923</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1460,10 +1466,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62060000" />
+    <option name="totallyTimeSpent" value="62307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="1938" height="1092" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1516,7 +1523,8 @@
     <MESSAGE value="增加kafka成功" />
     <MESSAGE value="增加mybatis插件" />
     <MESSAGE value="增加mybatis回填总页数插件" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加mybatis回填总页数插件" />
+    <MESSAGE value="nothing" />
+    <option name="LAST_COMMIT_MESSAGE" value="nothing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
