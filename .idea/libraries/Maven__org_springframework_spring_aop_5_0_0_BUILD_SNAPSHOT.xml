@@ -8,6 +8,8 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.0.BUILD-SNAPSHOT/spring-aop-5.0.0.BUILD-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.0.BUILD-SNAPSHOT/spring-aop-5.0.0.BUILD-SNAPSHOT.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.0.BUILD-SNAPSHOT/spring-aop-5.0.0.BUILD-SNAPSHOT.jar!/org" />
     </SOURCES>
   </library>
 </component>
